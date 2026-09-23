@@ -1,0 +1,11 @@
+# The sample pair is a reproducibility check — converting samples/Sample.epub must
+# reproduce samples/Sample.md byte for byte. Unlike EPUB2txt, this converter ALWAYS writes
+# LF (Markdown tools expect it; the reader reads either), so the checked-out sample must be
+# LF too whatever the cloner's core.autocrlf happens to be.
+samples/Sample.md text eol=lf
+
+# A zip; never touch it.
+*.epub binary
+
+# Batch files only run reliably with CRLF.
+*.bat text eol=crlf
